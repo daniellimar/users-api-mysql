@@ -18,7 +18,7 @@ public class Usuario {
     private String login;
     private String apelido;
     private String email;
-    private String status;
+    private Boolean status;
 
     @Column(name = "id_curso")
     private Long idCurso;
@@ -28,23 +28,6 @@ public class Usuario {
 
     @Column(name = "nivel_acesso")
     private String nivelAcesso;
-
-    private String password;
-
-    @Column(name = "two_factor_secret")
-    private String twoFactorSecret;
-
-    @Column(name = "two_factor_recovery_codes")
-    private String twoFactorRecoveryCodes;
-
-    @Column(name = "two_factor_confirmed_at")
-    private Date twoFactorConfirmedAt;
-
-    @Column(name = "remember_token")
-    private String rememberToken;
-
-    @Column(name = "email_verified_at")
-    private Date emailVerifiedAt;
 
     @Column(name = "created_at")
     private Date createdAt;
@@ -101,12 +84,12 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.status = Boolean.valueOf(status);
     }
 
     public Long getIdCurso() {
@@ -131,54 +114,6 @@ public class Usuario {
 
     public void setNivelAcesso(String nivelAcesso) {
         this.nivelAcesso = nivelAcesso;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getTwoFactorSecret() {
-        return twoFactorSecret;
-    }
-
-    public void setTwoFactorSecret(String twoFactorSecret) {
-        this.twoFactorSecret = twoFactorSecret;
-    }
-
-    public String getTwoFactorRecoveryCodes() {
-        return twoFactorRecoveryCodes;
-    }
-
-    public void setTwoFactorRecoveryCodes(String twoFactorRecoveryCodes) {
-        this.twoFactorRecoveryCodes = twoFactorRecoveryCodes;
-    }
-
-    public Date getTwoFactorConfirmedAt() {
-        return twoFactorConfirmedAt;
-    }
-
-    public void setTwoFactorConfirmedAt(Date twoFactorConfirmedAt) {
-        this.twoFactorConfirmedAt = twoFactorConfirmedAt;
-    }
-
-    public String getRememberToken() {
-        return rememberToken;
-    }
-
-    public void setRememberToken(String rememberToken) {
-        this.rememberToken = rememberToken;
-    }
-
-    public Date getEmailVerifiedAt() {
-        return emailVerifiedAt;
-    }
-
-    public void setEmailVerifiedAt(Date emailVerifiedAt) {
-        this.emailVerifiedAt = emailVerifiedAt;
     }
 
     public Date getCreatedAt() {
